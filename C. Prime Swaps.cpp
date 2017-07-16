@@ -8,7 +8,7 @@ bool isPrime(int g)
     if(g<=1)return false;
     if(g<=3)return true;
     if(g%2==0||g%3==0)return false;
-    for(int i=5;i*1ll*i<=100005;i+=6)
+    for(int i=5;i*i<=g;i+=6)
     {
         if(g%i==0||g%(i+2)==0)
             return false;
@@ -28,6 +28,16 @@ int main()
         if(isPrime(i))
             prime[i]=1;
     }
+   /* for(i=2;i<100005;i++)
+    {
+        if(prime[i]&&(i*1ll*i<100005))
+        {
+            for(j=i*i;j<100005;j+=i)
+            {
+                prime[j]=0;
+            }
+        }
+    }*/
     for(i=1;i<=n;i++)
     {
         x=pos[i];
